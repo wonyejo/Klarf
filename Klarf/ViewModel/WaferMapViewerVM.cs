@@ -2,6 +2,8 @@
 using System.Windows;
 using System.Windows.Media;
 using System.ComponentModel;
+using Klarf.Model;
+
 
 namespace Klarf.ViewModel
 {
@@ -9,27 +11,19 @@ namespace Klarf.ViewModel
     {
 
         #region 필드
-        private string waferImgSrc;
+        protected WaferMap waferMap;
 
-        public string WaferImgSrc
-        {
-            get { return waferImgSrc; }
-            set
-            {
-                waferImgSrc = value;
-                OnPropertyChanged(nameof(WaferImgSrc));
-            }
-        }
+
         #endregion
 
         #region 속성
-   
-         #endregion
+        public WaferMap WaferMap { get; set; }
+        #endregion
 
         #region 생성자
         public WaferMapViewerVM()
         {
-           
+            waferMap = new WaferMap();
 
         }
         #endregion

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Klarf.ViewModel;
 namespace Klarf
 {
     /// <summary>
@@ -23,6 +23,7 @@ namespace Klarf
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }

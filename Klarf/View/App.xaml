@@ -5,10 +5,10 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <ViewModel:FileListViewerVM x:Key="FileListViewerViewModel" />
-            <ViewModel:DefectImgViewerVM  x:Key="DefectImgViewerViewModel" />
-            <ViewModel:DefectInfoVM  x:Key="DefectInfoViewModel" />
-            <ViewModel:WaferMapViewerVM  x:Key="WaferMapViewerViewModel" />
+            <ViewModel:FileListViewerVM x:Key="FileListViewerVM" />
+            <ViewModel:DefectImgViewerVM  x:Key="DefectImgViewerVM" />
+            <ViewModel:DefectInfoVM  x:Key="DefectInfoVM" />
+            <ViewModel:WaferMapViewerVM  x:Key="WaferMapViewerVM" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -4,9 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Klarf"
+        xmlns:mv="clr-namespace:Klarf.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1200">
-
+        Title="Klarf Format" Height="800" Width="1200">
+    <Window.DataContext>
+        <mv:FileListViewerVM></mv:FileListViewerVM>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -18,15 +21,15 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="0">
-            <Image x:Name="WaferMapImg" Source="{Binding waferImgPath}" Stretch="Uniform" />
+        <Grid Grid.Row="0" Grid.Column="0" x:Name="WaferMap">
+            <Image x:Name="WaferMapImg" Source="{Binding waferMap}" Stretch="Uniform" />
         </Grid>
 
-        <Grid Grid.Row="0" Grid.Column="1">
+        <Grid Grid.Row="0" Grid.Column="1" DataContext="{Binding DefectImg}" x:Name="tifImg">
             <Image x:Name="DefectImg" Stretch="Uniform"/>
         </Grid>
 
-        <Grid Grid.Row="1" Grid.Column="0">
+        <Grid Grid.Row="1" Grid.Column="0"  x:Name="fileList">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -57,7 +60,7 @@
             </Grid>
         </Grid>
 
-        <Grid Grid.Row="1" Grid.Column="1">
+        <Grid Grid.Row="1" Grid.Column="1" x:Name="defectInfo">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
