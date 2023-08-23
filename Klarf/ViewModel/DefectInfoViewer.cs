@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Klarf.ViewModel
 {
-    class DefectImgViewerVM
+    class DefectInfoViewer
     {
     }
 }

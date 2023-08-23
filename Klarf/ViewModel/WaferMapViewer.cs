@@ -7,7 +7,7 @@ using Klarf.Model;
 
 namespace Klarf.ViewModel
 {
-    class WaferMapViewerVM : INotifyPropertyChanged
+    class WaferMapViewer : INotifyPropertyChanged
     {
 
         #region 필드
@@ -21,7 +21,7 @@ namespace Klarf.ViewModel
         #endregion
 
         #region 생성자
-        public WaferMapViewerVM()
+        public WaferMapViewer()
         {
             waferMap = new WaferMap();
 

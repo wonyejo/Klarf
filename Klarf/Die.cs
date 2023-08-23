@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Klarf.ViewModel
+namespace Klarf.Model
 {
-    class DefectInfoVM
+    class Die
     {
     }
 }

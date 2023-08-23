@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Klarf.Model
 {
-    class DefectRecord
+    class Defect
     {
         public int DefectId { get; set; }
         public double XRel { get; set; }
@@ -28,7 +28,7 @@ namespace Klarf.Model
         public int ImageList { get; set; }
 
         // 생성자로 데이터를 초기화하는 메서드
-        public DefectRecord(string line)
+        public Defect(string line)
         {
             string[] parts = line.Split(' ');
             DefectId = int.Parse(parts[0]);

@@ -60,15 +60,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Model\DefectRecord.cs" />
-    <Compile Include="Model\DefectInfo.cs" />
-    <Compile Include="Model\FileListViewer.cs" />
-    <Compile Include="Model\WaferMap.cs" />
-    <Compile Include="ViewModel\DefectImgViewerVM.cs" />
-    <Compile Include="ViewModel\DefectInfoVM.cs" />
-    <Compile Include="ViewModel\FileListViewerVM.cs" />
+    <Compile Include="Defect.cs" />
+    <Compile Include="Model\DefectInfoModel.cs" />
+    <Compile Include="Die.cs" />
+    <Compile Include="Model\DefectImg.cs" />
+    <Compile Include="Model\tifModel.cs" />
+    <Compile Include="WaferMap.cs" />
+    <Compile Include="Model\WaferMapModel.cs" />
+    <Compile Include="ViewModel\DefectImgViewer.cs" />
+    <Compile Include="ViewModel\DefectInfoViewer.cs" />
+    <Compile Include="ViewModel\FileListViewer.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
-    <Compile Include="ViewModel\WaferMapViewerVM.cs" />
+    <Compile Include="ViewModel\WaferMapViewer.cs" />
     <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>

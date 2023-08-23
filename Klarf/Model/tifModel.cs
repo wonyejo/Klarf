@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Klarf.Model
 {
-    class DefectInfo
+    class tifModel
     {
     }
 }

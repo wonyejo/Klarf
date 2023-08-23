@@ -8,8 +8,14 @@
         mc:Ignorable="d"
         Title="Klarf Format" Height="800" Width="1200">
     <Window.DataContext>
-        <mv:FileListViewerVM></mv:FileListViewerVM>
+        <mv:FileListViewer></mv:FileListViewer>
     </Window.DataContext>
+    <!--<Window.Resources>
+        <mv:DefectImgViewerVM x:Name="DefectImgViewerVM"></mv:DefectImgViewerVM>
+        <mv:DefectInfoVM x:Name="DefectInfoVM"></mv:DefectInfoVM>
+        <mv:FileListViewerVM x:Name="FileListViewerVM"></mv:FileListViewerVM>
+        <mv:WaferMapViewerVM x:Name="WaferMapViewerVM"></mv:WaferMapViewerVM>
+    </Window.Resources>-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -29,7 +35,7 @@
             <Image x:Name="DefectImg" Stretch="Uniform"/>
         </Grid>
 
-        <Grid Grid.Row="1" Grid.Column="0"  x:Name="fileList">
+        <Grid Grid.Row="1" Grid.Column="0"  x:Name="fileList" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -43,17 +49,16 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="FileViewer" Grid.Row="0" />
-                <Button Content="Open Done Folder" Grid.Row="1" Grid.Column="0" Width="150" Command="{Binding OpenFolder}"/>
+                <Button Content="Open Done Folder" Grid.Row="1" Grid.Column="0" Width="150" Command="{Binding OpenFolderCommand}"/>
                 <Button Content="Save all images" Grid.Row="1" Grid.Column="1" Width="100"/>
                 <Button Content="Refresh" Grid.Row="1" Grid.Column="2" Width="100"/>
                 <ProgressBar Value="50" Maximum="100"  VerticalAlignment="Center" Width="200" Grid.Row="1" Grid.Column="3"/>
-                <TreeView  Grid.Row="2" Grid.Column="0"></TreeView>
-                <ListView ItemsSource="{Binding Files}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
+                <TextBlock  Grid.Row="2" Grid.Column="0" Text="{Binding SelectedFolderPath}"></TextBlock>
+                <ListView ItemsSource="{Binding KlarfPaths}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
                     <ListView.View>
                         <GridView>
-                         
-                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding}" />
-                            <GridViewColumn Header="Date" DisplayMemberBinding="{Binding}" />
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                            <GridViewColumn Header="Date" DisplayMemberBinding="{Binding UpdateTime}" />
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -76,8 +81,9 @@
                 <TextBlock Text="Defect Die Info" Grid.Row="0" />
                 <TextBlock Text="Sample Infomation" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
                 <TextBlock Text="1 / 3" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" />
-        
-                <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">
+                <TextBlock Text="Say" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
+
+                <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
                     <!-- 다른 설정 및 스타일 설정 가능 -->
                 </DataGrid>
             </Grid>
