@@ -6,12 +6,43 @@ using System.Diagnostics;
 using System.IO;
 using System.ComponentModel;
 using System.Linq;
+using Klarf.Model;
 
 namespace Klarf.ViewModel
 {
-    class FileListViewer : INotifyPropertyChanged
+    class FileListViewerVM : INotifyPropertyChanged
     {
+
+        #region 필드
+        private string selectedFile;
         private string selectedFolderPath;
+        private RelayCommand _openFolderCommand;
+
+        #endregion
+
+        #region 속성
+        public string SelectedFile
+        {
+            get
+            {
+                return selectedFile;
+            }
+            set
+            {
+                if (selectedFile != value)
+                {
+                    selectedFile = value;
+                    OnPropertyChanged("SelectedFile");
+
+                    if (selectedFile != null)
+                    {
+                        KlarfDataReader klarfDataReader;
+                        klarfDataReader = new KlarfDataReader(selectedFolderPath + selectedFile); //읽고 처리까진 됐을 거임
+                        
+                    }
+                }
+            }
+        }
         public string SelectedFolderPath
         {
             get
@@ -38,8 +69,6 @@ namespace Klarf.ViewModel
                 OnPropertyChanged(nameof(KlarfPaths));
             }
         }
-
-        private RelayCommand _openFolderCommand;
         public ICommand OpenFolderCommand
         {
             get
@@ -51,14 +80,17 @@ namespace Klarf.ViewModel
 
             }
         }
-
-        public FileListViewer()
+        #endregion
+        #region 생성자
+        public FileListViewerVM()
         {
             klarfPaths = new ObservableCollection<KlarfFile>();
 
             OpenFolderCommand = new RelayCommand(OpenFolderDialog);
         }
+        #endregion
 
+        #region 메서드
         private void OpenFolderDialog()
         {
             using (var folderDialog = new System.Windows.Forms.FolderBrowserDialog())
@@ -90,14 +122,28 @@ namespace Klarf.ViewModel
             }
         }
 
-        public class KlarfFile
-        {
-            public string Name { get; set; }
-            public string Path { get; set; }
-            public bool IsFolder { get; set; }
-            public DateTime UpdateTime { get; set; }
-        }
+
 
         // ... (INotifyPropertyChanged 및 RelayCommand 관련 코드 생략)
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
     }
+    #endregion
+    #region 중첩된 클래스
+
+    #endregion
+
+
+
+
+
+
+
+
+
 }

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using System.ComponentModel;
 
 namespace Klarf.ViewModel
 {
-    class DefectImgViewer:INotifyPropertyChanged
+    class DefectImgViewerVM : INotifyPropertyChanged
     {
         private string selectedFilePath;
         public string SelectedFilePath
@@ -44,5 +45,13 @@ namespace Klarf.ViewModel
                 ImageSource = null;
             }
         }
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
     }
 }

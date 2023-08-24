@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Klarf.Model
+namespace Klarf.ViewModel
 {
-    class tifModel
+    class WaferMapViewerVM
     {
     }
 }

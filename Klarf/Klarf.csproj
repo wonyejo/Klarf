@@ -56,22 +56,45 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\DefectImgViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DefectInfoViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FileListViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Defect.cs" />
-    <Compile Include="Model\DefectInfoModel.cs" />
+    <Compile Include="KlarfFile.cs" />
     <Compile Include="Die.cs" />
-    <Compile Include="Model\DefectImg.cs" />
-    <Compile Include="Model\tifModel.cs" />
+    <Compile Include="Model\tifDataReader.cs" />
+    <Compile Include="ViewModel\WaferMapViewerVM.cs" />
+    <Compile Include="View\DefectImgViewer.xaml.cs">
+      <DependentUpon>DefectImgViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DefectInfoViewer.xaml.cs">
+      <DependentUpon>DefectInfoViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FileListViewer.xaml.cs">
+      <DependentUpon>FileListViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WaferMapViewer.xaml.cs">
+      <DependentUpon>WaferMapViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WaferMap.cs" />
-    <Compile Include="Model\WaferMapModel.cs" />
-    <Compile Include="ViewModel\DefectImgViewer.cs" />
-    <Compile Include="ViewModel\DefectInfoViewer.cs" />
-    <Compile Include="ViewModel\FileListViewer.cs" />
+    <Compile Include="Model\klarfDataReader.cs" />
+    <Compile Include="ViewModel\DefectImgViewerVM.cs" />
+    <Compile Include="ViewModel\KlarfDataViewerVM.cs" />
+    <Compile Include="ViewModel\FileListViewerVM.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
-    <Compile Include="ViewModel\WaferMapViewer.cs" />
     <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -80,6 +103,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\WaferMapViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
