@@ -14,10 +14,11 @@ namespace Klarf.ViewModel
     {
 
         #region 필드
+        private ObservableCollection<KlarfFile> klarfPaths;
         private string selectedFile;
         private string selectedFolderPath;
         private RelayCommand _openFolderCommand;
-
+        private KlarfDataReader klarfDataReader;
         #endregion
 
         #region 속성
@@ -36,8 +37,7 @@ namespace Klarf.ViewModel
 
                     if (selectedFile != null)
                     {
-                        KlarfDataReader klarfDataReader;
-                        klarfDataReader = new KlarfDataReader(selectedFolderPath + selectedFile); //읽고 처리까진 됐을 거임
+                       
                         
                     }
                 }
@@ -56,7 +56,7 @@ namespace Klarf.ViewModel
             }
         }
 
-        private ObservableCollection<KlarfFile> klarfPaths;
+     
         public ObservableCollection<KlarfFile> KlarfPaths
         {
             get
@@ -82,9 +82,12 @@ namespace Klarf.ViewModel
         }
         #endregion
         #region 생성자
+      
+
         public FileListViewerVM()
         {
             klarfPaths = new ObservableCollection<KlarfFile>();
+           
 
             OpenFolderCommand = new RelayCommand(OpenFolderDialog);
         }

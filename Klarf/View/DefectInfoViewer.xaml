@@ -5,8 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Klarf.View"
-             mc:Ignorable="d" 
+              xmlns:vm="clr-namespace:Klarf.ViewModel"
+             mc:Ignorable="d"
             d:DesignHeight="200" d:DesignWidth="300">
+    
+    <UserControl.DataContext>
+        <mv:KlarfDataViewerVM>
+        </mv:KlarfDataViewerVM>
+    </UserControl.DataContext>
     <Grid Grid.Row="1" Grid.Column="1" x:Name="defectInfo">
         <Grid>
             <Grid.RowDefinitions>

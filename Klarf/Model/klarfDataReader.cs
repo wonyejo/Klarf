@@ -4,10 +4,10 @@ using System.Collections.ObjectModel;
 namespace Klarf.Model
 {
     class KlarfDataReader
-    {
+    { 
+        public string filePath;
         public ObservableCollection<Defect> Defects { get; private set; }
         public ObservableCollection<Die> Dies { get; private set; }
-        public int SampleTestPlan { get; private set; }
 
         public KlarfDataReader(string klarfFilePath)
         {
@@ -55,6 +55,8 @@ namespace Klarf.Model
                 }
             }
         }
+
+        
 
 
     }

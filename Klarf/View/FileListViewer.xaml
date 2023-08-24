@@ -7,7 +7,9 @@
              xmlns:vm="clr-namespace:Klarf.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="200" d:DesignWidth="300">
-
+    <UserControl.DataContext>
+        <vm:FileListViewerVM></vm:FileListViewerVM>
+    </UserControl.DataContext>
     <Grid Grid.Row="1" Grid.Column="0"  x:Name="fileList" >
         <Grid>
             <Grid.RowDefinitions>
@@ -26,7 +28,7 @@
             <Button Content="Save all images" Grid.Row="1" Grid.Column="1" Width="100"/>
             <Button Content="Refresh" Grid.Row="1" Grid.Column="2" Width="100"/>
             <ProgressBar Value="50" Maximum="100"  VerticalAlignment="Center" Width="200" Grid.Row="1" Grid.Column="3"/>
-            <TextBlock  Grid.Row="2" Grid.Column="0" Text="{Binding SelectedFolderPath}"></TextBlock>
+            <TextBlock TextWrapping="Wrap" TextTrimming="CharacterEllipsis" Grid.Row="2" Grid.Column="0" Text="{Binding SelectedFolderPath}" />
             <ListView ItemsSource="{Binding KlarfPaths}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
                 <ListView.View>
                     <GridView>

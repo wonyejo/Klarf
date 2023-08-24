@@ -4,20 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Klarf"
-        xmlns:mv="clr-namespace:Klarf.ViewModel"
+        xmlns:vm="clr-namespace:Klarf.ViewModel"
         xmlns:v="clr-namespace:Klarf.View"
         mc:Ignorable="d"
         Title="Klarf Format" Height="800" Width="1200">
-    <Window.DataContext>
-        <mv:FileListViewerVM></mv:FileListViewerVM>
-    </Window.DataContext>
-    <!--<Window.Resources>
-        <mv:DefectImgViewerVM x:Name="DefectImgViewerVM"></mv:DefectImgViewerVM>
-        <mv:DefectInfoVM x:Name="DefectInfoVM"></mv:DefectInfoVM>
-        <mv:FileListViewerVM x:Name="FileListViewerVM"></mv:FileListViewerVM>
-        <mv:WaferMapViewerVM x:Name="WaferMapViewerVM"></mv:WaferMapViewerVM>
-    </Window.Resources>-->
-    <Grid>
+    
+     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />

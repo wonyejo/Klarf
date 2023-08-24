@@ -18,7 +18,7 @@ namespace Klarf.Model
                 foreach (Die die in Dies)
                 {
                     Rect rect = new Rect(die.X, die.Y, 10, 10);
-                    drawingContext.DrawRectangle(new SolidColorBrush(die.StatusColor), null, rect);
+                    drawingContext.DrawRectangle(new SolidColorBrush(), null, rect);
                 }
             }
 
