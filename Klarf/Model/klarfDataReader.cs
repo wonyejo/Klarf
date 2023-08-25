@@ -5,7 +5,7 @@ namespace Klarf.Model
 {
     class KlarfDataReader
     { 
-        public string filePath;
+       
         public ObservableCollection<Defect> Defects { get; private set; }
         public ObservableCollection<Die> Dies { get; private set; }
 
@@ -52,6 +52,7 @@ namespace Klarf.Model
                 {
                     Defect defect = new Defect(line);
                     Defects.Add(defect);
+                    
                 }
             }
         }

@@ -31,7 +31,7 @@
             <TextBlock Text="1 / 3" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" />
             <TextBlock Text="Say" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
 
-            <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+            <DataGrid ItemsSource="{Binding Defects}" AutoGenerateColumns="True" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
                 <!-- 다른 설정 및 스타일 설정 가능 -->
             </DataGrid>
         </Grid>

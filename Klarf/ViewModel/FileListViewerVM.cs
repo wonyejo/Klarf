@@ -18,7 +18,7 @@ namespace Klarf.ViewModel
         private string selectedFile;
         private string selectedFolderPath;
         private RelayCommand _openFolderCommand;
-        private KlarfDataReader klarfDataReader;
+       
         #endregion
 
         #region 속성
@@ -35,11 +35,7 @@ namespace Klarf.ViewModel
                     selectedFile = value;
                     OnPropertyChanged("SelectedFile");
 
-                    if (selectedFile != null)
-                    {
-                       
-                        
-                    }
+                   
                 }
             }
         }

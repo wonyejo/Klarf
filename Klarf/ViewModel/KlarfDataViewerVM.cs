@@ -10,12 +10,16 @@ namespace Klarf.ViewModel
 {
     class KlarfDataViewerVM
     {
-        private string filePath;
-        public ObservableCollection<KlarfFile> KlarfFiles { get; set; }
+        public ObservableCollection<Defect> Defects { get; } = new ObservableCollection<Defect>();
 
         public KlarfDataViewerVM()
         {
-            KlarfFiles = new ObservableCollection<KlarfFile>();
+            
+        }
+
+        public KlarfDataViewerVM(ObservableCollection<Defect> defects)
+        {
+            Defects = defects;
         }
       
     }
